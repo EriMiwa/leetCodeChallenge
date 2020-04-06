@@ -23,12 +23,12 @@ var merge = function(intervals) {
   let result = [previous];
   
   for (let current of intervals) {
-      if(previous[1] >= current[0]) {
-          previous[1] = Math.max(previous[1], current[1]);
-      } else {
-          result.push(current);
-          previous = current;
-      }
+    if(previous[1] >= current[0]) {
+      previous[1] = Math.max(previous[1], current[1]);
+    } else {
+      result.push(current);
+      previous = current;
+    }
   }
   return result
 };

@@ -28,3 +28,34 @@ https://leetcode.com/problems/valid-parentheses/
 
 // Input: "{[]}"
 // Output: true
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+  if (s.length % 2 !== 0) {
+      return false
+  }
+  
+   const paren_map = {
+      '(' : ')',
+      '[' : ']',
+      '{' : '}'
+  }
+  
+  let stack = []
+  let count = 0
+  for (let paren of s) { 
+    if (Object.keys(paren_map).includes(paren)) {
+      count ++;
+    } else {
+      count --;
+    }
+    console.log(count)
+  }
+  if (count === 0) {
+    return true
+  }
+  return false
+};
